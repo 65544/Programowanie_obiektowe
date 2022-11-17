@@ -1,165 +1,179 @@
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class Main {
-    static int [] tab = new int[10];
-    static Random random = new Random();
+
     public static void main(String[] args) {
+        System.out.println(getImie());
+        System.out.println(getWiek());
+        //Obliczenia(4,2);
+        //System.out.println(;Parzysta(4));
+        //System.out.println(PodzielnaPrzez15(30));
+        //System.out.println(DoSzescianu(2));
 
-        Losowanie();
-        //Suma();
-        //Srednia();
-        //coDrugi();
-        //Zad3();
-        //Zad4();
-        //Zad5();
-        //Zad6();
-        Zad7();
+
+        //-------------------------
+        //Zadanie1_lab3();
+        //Zadanie2_lab3();
+        //Zadanie3_lab3();
+        //Zadanie4_lab3();
+        //System.out.println(Zadanie5_lab3());
+        //System.out.println(Zadanie7_lab1());
+        System.out.println(Zadanie6_lab1(9));
     }
-
-    public static void Losowanie() {
-        for (int i = 0; i < tab.length; i++) {
-            tab[i] = random.nextInt(50) - 25;
-            System.out.println(tab[i]);
-        }
-    }
-    /*
-
-public static void Suma(){
-   int suma = 0;
-    for (int i:tab) {
-        suma+=i;
-    }
-    System.out.println("Suma: "+suma);
-}
-public static void Srednia(){
-    int srednia=0;
-    for (int i = 0; i < tab.length ; i++) {
-        srednia+=tab[i];
-
-    }
-    srednia = srednia/tab.length;
-    System.out.println("Srednia: "+srednia);
-}
-
-
-public static void coDrugi(){
-    for (int i = 0; i < tab.length ;i++) {
-        if (i%2==0)
-            System.out.println(i+" = "+tab[i]);
-    }
-}
-
-public static void Zad3(){
-    String[] slowa = {"Ala ","ma ","kota."};
-    for (String i:slowa) {
-        System.out.println(i.toUpperCase());
-    }
-}
-
-
-    public static void Zad4(){
-        String[] slowa = new String[6];
-        System.out.println("Podaj "+slowa.length + " slow: ");
-
-        for (int i = 1; i < slowa.length ; i++) {
-            System.out.print((i)+ " slowo: ");
-            slowa[i] = getString();
-        }
-
-        for (int i = slowa.length-1; i >=0 ; i--) {
-            for (int j = slowa[i].length()-1; j >=0 ; j--) {
-                System.out.print(slowa[i].charAt(j));
-            }
-            System.out.println(
-
-            );
-        }
-    }
-
-
-
-    public static void Zad5()
-    {
-        int[] liczby = new int[8];
-        int x = 0;
-        System.out.println("Podaj "+liczby.length + " liczb: ");
-
-        for (int i = 0; i < liczby.length; i++) {
-            System.out.print((i+1)+" liczba: ");
-            liczby[i]=getInt();
-
-        }
-
-        for (int i = 0; i < liczby.length ; i++) {
-            for (int j = 0; j < liczby.length-1; j++) {
-                if (liczby[j] > liczby[j+1]){
-                    x = liczby[j];
-                    liczby[j] = liczby[j+1];
-                    liczby[j+1] = x;}
-            }
-        }
-
-        for (int i = 0; i < liczby.length ; i++) {
-            System.out.println(liczby[i]);
-        }
-    }
-    
-
-    public static void Zad6()
-    {
-        int[] liczby = new int[5];
-        int x = 1;
-        System.out.println("Podaj "+liczby.length + " liczb: ");
-
-        for (int i = 0; i < liczby.length; i++) {
-            System.out.print((i+1)+" liczba: ");
-            liczby[i]=getInt();
-        }
-        for (int i = 0; i < liczby.length ; i++) {
-            System.out.print("["+liczby[i]+"]"+" ");
-            x = 1;
-            for (int j = 1; j <= liczby[i] ; j++) {
-                x=x*j;
-            }
-            System.out.println(x);
-        }
-    }
-    */
-
-    public static void Zad7()
-    {
-    String string1[] = new String[3];
-    String string2[] = new String[3];
-    string1[0] = "Ala ";
-    string1[1] = "ma ";
-    string1[2] = "kota";
-    string2[0] = "Ala ";
-    string2[1] = "ma ";
-    string2[2] = "kota";
-        System.out.println(string1[0]+string1[1]+string1[2]);
-        System.out.println(string2[0]+string2[1]+string2[2]);
-
-        for (int i = 0; i < string1.length; i++) {
-            for (int j = 0; j < string1[i].length(); j++) {
-                if (string1[i].charAt(j)==string2[i].charAt(j))
-                    System.out.println((j+1)+" litera "+(i+1)+" słowa jest taka sama!");
-                else System.out.println((j+1)+" litera "+(i+1)+" słowa się nie zgadza :(");
-            }
-        }
-
-    }
-
-    public static String getString(){
-        return new Scanner(System.in).next();
-    }
-
-    public static int getInt()
-    {
+    public static int getInt() {
         return new Scanner(System.in).nextInt();
     }
-}
+
+    // Zadanie 1
+
+    public static String getImie(){
+        return "Adam";
+    }
+    public static int getWiek(){
+        return 23;
+    }
+    /*
+    // Zadanie 2
+    public static void Obliczenia(double a, double b){
+        System.out.println("Suma: "+a+" + "+b+" = "+(a+b));
+        System.out.println("Róznica: "+a+" - "+b+" = "+(a-b));
+        System.out.println("Iloczyn: "+a+" * "+b+" = "+(a*b));
+    }
+    // Zadanie 3
+    public static boolean Parzysta(int a){
+        if (a%2==0) return true;
+        return false;
+    }
+    // Zadanie 4
+    public static boolean PodzielnaPrzez15 (int a){
+        if (a%15==0) return true;
+        return false;
+    }
+    // Zadanie 5
+    public static int DoSzescianu (int a){
+        return (a*a*a);
+    }
+    public static void Zadanie1_lab3(){
+        int LiczbaPkt, suma=0, ile=0;
+        System.out.println("Podaj liczbę studentów: ");
+        int n=getInt();
+        if (n>0){
+            while (n>0){
+                System.out.println("Podaj liczbę pkt 0 - 40");
+                LiczbaPkt=getInt();
+                if(LiczbaPkt>=0 && LiczbaPkt<=40){
+                    suma+=LiczbaPkt;
+                    n--;
+                    ile++;
+                }continue;
+            }
+            System.out.println("Suma: "+suma);
+            System.out.println("Srednia: "+(double)(suma/ile));
+        }else System.out.println("W grupie musi być conajmniej 1 osoba");
+    }*/
+
+    public static void Zadanie2_lab3(){
+        int n=10, liczba, ujemne=0, dodatnie=0, sumauj=0, sumadod=0;
+        while(n>0)
+        {
+
+            System.out.println("Podaj liczbę: ");
+            liczba=getInt();
+            if(liczba >= 0){
+                sumadod+=liczba;
+                n--;
+                dodatnie++;
+            }
+            else {
+                sumauj+=liczba;
+                n--;
+                ujemne++;
+            }
+
+        }
+        System.out.println("Liczba dodatnich liczb: "+dodatnie);
+        System.out.println("Suma dodatnich liczb: "+sumadod);
+        System.out.println("Liczba ujemnych liczb: "+ujemne);
+        System.out.println("Suma ujemnych liczb: "+sumauj);
+    }
+    public static void Zadanie3_lab3(){
+        int n, suma=0;
+        System.out.printf("Podaj liczbę liczb w ciągu: ");
+        n=getInt();
+
+        while(n>0)
+        {
+            Random rand = new Random();
+            int liczba = rand.nextInt();
+            System.out.println(liczba);
+            if (liczba>=0) suma+=liczba;
+            n--;
+
+        }
+        System.out.println("Suma dodatnich liczb w ciągu: "+suma);
+    }
+
+    public static void  Zadanie4_lab3()
+    {
+        int n, suma=0;
+        System.out.printf("Podaj liczbę liczb w ciągu: ");
+        n=getInt();
+
+        while(n>0)
+        {
+            Random rand = new Random();
+            int liczba = rand.nextInt(56)-10;
+            System.out.println(liczba);
+            if (liczba>=0) suma+=liczba;
+            n--;
+
+        }
+        System.out.println("Suma dodatnich liczb w ciągu: "+suma);
+    }
+
+    public static boolean Zadanie5_lab3()
+    {
+        System.out.println("Podaj swoją frazę do sprawdzenia: ");
+        Scanner input = new Scanner(System.in);
+        String s = input.nextLine();
+        for (int i=0; i < s.length() / 2; i++)
+            if(s.charAt(i) != s.charAt(s.length() - 1 - i))
+                return false;
+        return true;
+    }
+
+        public static boolean Zadanie7_lab1()
+        {
+            Random rand = new Random();
+            System.out.println("Podaj zakres liczbowy (wartości muszą być dodatnie): ");
+            System.out.printf("Od: ");
+            int a = getInt();
+            while (a<=0) {
+                System.out.println("Podaj dolną wartość zakresu ponownie: ");
+                a = getInt();
+            }
+            System.out.printf("Do: ");
+            int b = getInt();
+            while (b<=0) {
+                System.out.println("Podaj górną wartość zakresu ponownie: ");
+                b = getInt();
+            }
+            int x = rand.nextInt(b-a+1)+a;
+            int y = rand.nextInt(b-a+1)+a;
+            int z = rand.nextInt(b-a+1)+a;
+            System.out.println(x);
+            System.out.println(y);
+            System.out.println(z);
+            if(((x*x)+(y*y)==(z*z)) || ((z*z)+(y*y)==(x*x)) || ((x*x)+(z*z)==(y*y)))
+                return true;
+
+            return false;
+        }
 
 
 
+    public static double Zadanie6_lab1 (double a){
+        return (Math.sqrt(a));
+    }
+        }
